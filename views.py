@@ -13,15 +13,15 @@ hello = webapp2.WSGIApplication([('/', Hello)],
 class Count(webapp2.RequestHandler):
   def get(self):
       self.response.headers['Content-Type'] = 'text/plain'
-      self.response.out.write('Hello, webapp World!')
+      self.response.out.write('Hello, counting World!')
 
-count = webapp2.WSGIApplication([('/count', Count)],
+count = webapp2.WSGIApplication([('/count/?', Count)],
                                 debug=True)
 
 class GetData(webapp2.RequestHandler):
   def get(self):
       self.response.headers['Content-Type'] = 'text/plain'
-      self.response.out.write('Hello, webapp World!')
+      self.response.out.write('Hello, getting World!')
 
-getdata = webapp2.WSGIApplication([('/', GetData)],
+getdata = webapp2.WSGIApplication([('/getdata/?', GetData)],
                                 debug=True)

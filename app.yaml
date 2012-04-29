@@ -5,9 +5,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /count.*
+- url: /count/?
   script: views.count
-- url: /getdata.*
+- url: /getdata/?
   script: views.getdata
-#- url: /.*
-#  script: views.hello
+- url: /
+  script: views.hello
