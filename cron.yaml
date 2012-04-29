@@ -1,0 +1,4 @@
+cron:
+- description: Get the playercounts
+  url: /count
+  schedule: every 5 minutes
