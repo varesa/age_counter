@@ -1,5 +1,13 @@
 application: agecounter
-version: 0.1
+version: pre1
 runtime: python27
 api_version: 1
-threadsafe: false
+threadsafe: true
+
+handlers:
+- url: /count.*
+  script: views.count
+- url: /getdata.*
+  script: views.getdata
+#- url: /.*
+#  script: views.hello
