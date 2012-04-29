@@ -1,4 +1,4 @@
 cron:
 - description: Get the playercounts
   url: /count
-  schedule: every 5 minutes
+  schedule: every 5 minutes synchronized
