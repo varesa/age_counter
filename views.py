@@ -39,7 +39,7 @@ class GetData(webapp2.RequestHandler):
 
 	db = models.PlayerCount.all()
 	for row in db:
-	    self.response.write(str(row.timestamp) + '\n')
+	    self.response.write(str(row.timestamp) + " " + str(row.A3) + " " + str(row.WC)+ " " + str(row.AD) + '\n')
 
 getdata = webapp2.WSGIApplication([('/getdata/?', GetData)],
                                 debug=True)
