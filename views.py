@@ -20,11 +20,11 @@ class Count(webapp2.RequestHandler):
         #e = models.String(data=time)
         #e.put()
         
-        pc = models.PlayerCount(timestamp=time.time(), A3=time.time()/3, WC=time.time()/5, AD=time.time()/7)
+        pc = models.PlayerCount(timestamp=int(time.time()), A3=int(time.time()/3), WC=int(time.time()/5), AD=int(time.time()/7))
         pc.put()
         
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, counting World! The date and time is ' + date + ' (' + time.time() + ')')
+        self.response.out.write('Hello, counting World! The date and time is ' + date + ' (' + str(time.time()) + ')')
 
 count = webapp2.WSGIApplication([('/count/?', Count)],
                                 debug=True)
