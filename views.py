@@ -8,7 +8,8 @@ import models
 class Hello(webapp2.RequestHandler):
   def get(self):
       self.response.headers['Content-Type'] = 'text/plain'
-      self.response.out.write('Hello, webapp World!')
+      self.response.out.write('Hello, webapp World!\n')
+      self.response.out.write('4172766920546f6c76616e656e206f6e20676179203a29')
 
 hello = webapp2.WSGIApplication([('/', Hello)],
                                 debug=True)
