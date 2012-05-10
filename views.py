@@ -32,12 +32,13 @@ count = webapp2.WSGIApplication([('/count/?', Count)],
 class GetData(webapp2.RequestHandler):
     def get(self):
 
-	data = models.String.all()
-	for value in data:
-	    self.response.write(value.data + '\n')
 
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write('Hello, getting World!')
+
+	data = models.PlayerCount.all()
+	for value in data:
+	    self.response.write(value.data + '\n')
 
 getdata = webapp2.WSGIApplication([('/getdata/?', GetData)],
                                 debug=True)
