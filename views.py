@@ -15,7 +15,7 @@ hello = webapp2.WSGIApplication([('/', Hello)],
 
 class Count(webapp2.RequestHandler):
     def get(self):
-        time = str(datetime.datetime.now())
+        date = str(datetime.datetime.now())
         
         #e = models.String(data=time)
         #e.put()
@@ -24,7 +24,7 @@ class Count(webapp2.RequestHandler):
         pc.put()
         
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, counting World! The date and time is ' + time + ' (' + time.time() + ')')
+        self.response.out.write('Hello, counting World! The date and time is ' + date + ' (' + time.time() + ')')
 
 count = webapp2.WSGIApplication([('/count/?', Count)],
                                 debug=True)
