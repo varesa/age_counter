@@ -36,9 +36,9 @@ class GetData(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write('Hello, getting World!')
 
-	data = models.PlayerCount.all()
-	for value in data:
-	    self.response.write(value.data + '\n')
+	db = models.PlayerCount.all()
+	for row in db:
+	    self.response.write(row.timestamp + '\n')
 
 getdata = webapp2.WSGIApplication([('/getdata/?', GetData)],
                                 debug=True)
